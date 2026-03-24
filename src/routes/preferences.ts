@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { eq, and, sql } from "drizzle-orm";
+import type { EvlogVariables } from "evlog/hono";
 import db from "../db/index.ts";
 import { users, overrides } from "../db/schema.ts";
 import { Mode, Project } from "../enums.ts";
@@ -9,7 +10,7 @@ import { wipeUserData } from "../wipe.ts";
 const validModes = new Set<string>(Object.values(Mode));
 const validProjects = new Set<string>(Object.values(Project));
 
-const preferences = new Hono();
+const preferences = new Hono<EvlogVariables>();
 
 // GET /preferences/:userId — get mode + project overrides
 preferences.get("/:userId", async (c) => {

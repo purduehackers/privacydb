@@ -13,6 +13,7 @@
   "dependencies": {
     "@libsql/client": "^0.17.0",
     "drizzle-orm": "^0.45.1",
+    "evlog": "^2.9.0",
     "hono": "^4.12.7",
     "nitro": "^3.0.260311-beta",
     "rollup": "^4.60.0"
